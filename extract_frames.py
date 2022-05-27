@@ -23,9 +23,9 @@ def extract_frames_from_single_video(video_path, save_folder):
 
         if ret:
             current_frame += 1
-            if (current_frame % 300) == 0:
+            if (current_frame % 200) == 0 and current_frame < 1300:
 
-                frame_name = save_folder + '/' + str(video_path[-15:-4])+ '/' + str(video_path[-15:-4]) + '_' + str(current_frame//300) + '.jpg'
+                frame_name = save_folder + '/' + str(video_path[-15:-4])+ '/' + str(video_path[-15:-4]) + '_' + str(current_frame//200) + '.jpg'
                 print("Creating frame: " + frame_name)
 
                 cv2.imwrite(frame_name, frame)
