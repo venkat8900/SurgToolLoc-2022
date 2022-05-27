@@ -14,6 +14,10 @@ def create_new_labels_file():
             pass
 
 def get_frame_names():
+    """
+    Gets all the frame names into out
+    : returns all frame names
+    """
     base_dir = "./data"
 
     dir_list = os.listdir(base_dir)
@@ -24,7 +28,8 @@ def get_frame_names():
 
         for j in dir_list_2:
             out.append(os.path.splitext(j)[0])
-            
+
+    # sort the list based on clip names
     out.sort(key = lambda x: x[5:11])
 
     counter = 0
@@ -36,6 +41,10 @@ def get_frame_names():
     return out
 
 def add_labels_new_file():
+    """
+    Adds new frames and corresponding clips in new_labels csv
+    """
+    
     out = get_frame_names()
 
     new_df = pd.DataFrame()
